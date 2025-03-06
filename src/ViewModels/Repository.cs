@@ -1010,6 +1010,8 @@ namespace SourceGit.ViewModels
             if (_settings.EnableFirstParentInHistories)
                 builder.Append("--first-parent ");
 
+            builder.Append("--tags HEAD ");
+
             var filters = _settings.BuildHistoriesFilter();
             if (string.IsNullOrEmpty(filters))
                 builder.Append("--branches --remotes --tags");
